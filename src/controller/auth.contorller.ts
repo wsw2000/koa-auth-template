@@ -23,8 +23,12 @@ class UserController {
       message: 'login success~~'
     }
   }
+  async loginSuccess(ctx: Context) {
+    ctx.body = {
+      code: 0,
+      data: 'login success~~'
+    }
+  }
 }
 
-const { login } = new UserController()
-
-export { login }
+export const { login, loginSuccess } = new UserController()
