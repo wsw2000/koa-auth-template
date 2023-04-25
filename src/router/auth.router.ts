@@ -1,6 +1,7 @@
 import Router from 'koa-router'
-import { verifyLogin, login } from '/@/middleware/auth.middleware'
-const authRouter = new Router({ prefix: '/' })
+import { verifyLogin } from '/@/middleware/auth.middleware'
+import { login } from '/@/controller/auth.contorller'
+const authRouter = new Router()
 
 authRouter.post('/login', verifyLogin, login)
 

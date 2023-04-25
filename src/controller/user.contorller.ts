@@ -15,7 +15,12 @@ class UserController {
     // 查询数据
     try {
       const result = await userService.create(user)
-      ctx.body = result
+      if (result.serverStatus === 2) {
+        ctx.body = {
+          status: 200,
+          message: '创建用户成功'
+        }
+      }
     } catch (error) {
       console.log('error~ ', error)
     }
